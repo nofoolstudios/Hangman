@@ -1,0 +1,346 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://Images/Background/grey_background.png" type="Texture" id=2]
+[ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Images/Word_Images/apple.png" type="Texture" id=4]
+[ext_resource path="res://Images/Hangman_Images/hangman0.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 62
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 3 )
+
+[node name="Main" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.463295
+margin_right = -0.463318
+texture = ExtResource( 2 )
+expand = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+
+[node name="Area_Title" type="VBoxContainer" parent="MarginContainer"]
+editor/display_folded = true
+margin_right = 984.0
+margin_bottom = 560.0
+
+[node name="Title" type="Label" parent="MarginContainer/Area_Title"]
+margin_right = 984.0
+margin_bottom = 75.0
+custom_fonts/font = SubResource( 1 )
+text = "hangman"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Area_Guess" type="VBoxContainer" parent="MarginContainer"]
+editor/display_folded = true
+margin_right = 984.0
+margin_bottom = 560.0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Area_Guess"]
+editor/display_folded = true
+margin_top = 152.0
+margin_right = 984.0
+margin_bottom = 408.0
+alignment = 1
+
+[node name="ImageHint" type="TextureRect" parent="MarginContainer/Area_Guess/HBoxContainer"]
+margin_right = 126.0
+margin_bottom = 256.0
+texture = ExtResource( 4 )
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Area_Guess/HBoxContainer"]
+editor/display_folded = true
+margin_left = 130.0
+margin_right = 724.0
+margin_bottom = 256.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="HiddenWordText" type="Label" parent="MarginContainer/Area_Guess/HBoxContainer/VBoxContainer"]
+margin_top = 89.0
+margin_right = 594.0
+margin_bottom = 167.0
+custom_fonts/font = SubResource( 2 )
+text = "TEST"
+align = 1
+valign = 1
+
+[node name="HangManImage" type="TextureRect" parent="MarginContainer/Area_Guess/HBoxContainer"]
+margin_left = 728.0
+margin_right = 984.0
+margin_bottom = 256.0
+texture = ExtResource( 5 )
+
+[node name="Area_Input" type="VBoxContainer" parent="MarginContainer"]
+editor/display_folded = true
+margin_right = 984.0
+margin_bottom = 560.0
+alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Area_Input"]
+margin_top = 462.0
+margin_right = 984.0
+margin_bottom = 462.0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Area_Input/VBoxContainer"]
+editor/display_folded = true
+margin_right = 984.0
+alignment = 1
+
+[node name="RestartButton" type="Button" parent="MarginContainer/Area_Input/VBoxContainer/HBoxContainer"]
+visible = false
+margin_left = 364.0
+margin_right = 619.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 3 )
+text = "PLAY AGAIN?"
+
+[node name="Area_Letters1" type="HBoxContainer" parent="MarginContainer/Area_Input"]
+editor/display_folded = true
+margin_top = 466.0
+margin_right = 984.0
+margin_bottom = 511.0
+alignment = 1
+
+[node name="A" type="Button" parent="MarginContainer/Area_Input/Area_Letters1"]
+margin_left = 195.0
+margin_right = 233.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "A"
+
+[node name="B" type="Button" parent="MarginContainer/Area_Input/Area_Letters1"]
+margin_left = 237.0
+margin_right = 273.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "B"
+
+[node name="C" type="Button" parent="MarginContainer/Area_Input/Area_Letters1"]
+margin_left = 277.0
+margin_right = 312.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "C"
+
+[node name="D" type="Button" parent="MarginContainer/Area_Input/Area_Letters1"]
+margin_left = 316.0
+margin_right = 354.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "D"
+
+[node name="E" type="Button" parent="MarginContainer/Area_Input/Area_Letters1"]
+margin_left = 358.0
+margin_right = 393.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "E"
+
+[node name="F" type="Button" parent="MarginContainer/Area_Input/Area_Letters1"]
+margin_left = 397.0
+margin_right = 431.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "F"
+
+[node name="G" type="Button" parent="MarginContainer/Area_Input/Area_Letters1"]
+margin_left = 435.0
+margin_right = 473.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "G"
+
+[node name="H" type="Button" parent="MarginContainer/Area_Input/Area_Letters1"]
+margin_left = 477.0
+margin_right = 515.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "H"
+
+[node name="I" type="Button" parent="MarginContainer/Area_Input/Area_Letters1"]
+margin_left = 519.0
+margin_right = 540.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "I"
+
+[node name="J" type="Button" parent="MarginContainer/Area_Input/Area_Letters1"]
+margin_left = 544.0
+margin_right = 580.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "J"
+
+[node name="K" type="Button" parent="MarginContainer/Area_Input/Area_Letters1"]
+margin_left = 584.0
+margin_right = 619.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "K"
+
+[node name="L" type="Button" parent="MarginContainer/Area_Input/Area_Letters1"]
+margin_left = 623.0
+margin_right = 657.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "L"
+
+[node name="M" type="Button" parent="MarginContainer/Area_Input/Area_Letters1"]
+margin_left = 661.0
+margin_right = 705.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "M"
+
+[node name="N" type="Button" parent="MarginContainer/Area_Input/Area_Letters1"]
+margin_left = 709.0
+margin_right = 747.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "N"
+
+[node name="O" type="Button" parent="MarginContainer/Area_Input/Area_Letters1"]
+margin_left = 751.0
+margin_right = 789.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "O"
+
+[node name="Area_Letters2" type="HBoxContainer" parent="MarginContainer/Area_Input"]
+editor/display_folded = true
+margin_top = 515.0
+margin_right = 984.0
+margin_bottom = 560.0
+alignment = 1
+
+[node name="P" type="Button" parent="MarginContainer/Area_Input/Area_Letters2"]
+margin_left = 264.0
+margin_right = 300.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "P"
+
+[node name="Q" type="Button" parent="MarginContainer/Area_Input/Area_Letters2"]
+margin_left = 304.0
+margin_right = 342.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "Q"
+
+[node name="R" type="Button" parent="MarginContainer/Area_Input/Area_Letters2"]
+margin_left = 346.0
+margin_right = 382.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "R"
+
+[node name="S" type="Button" parent="MarginContainer/Area_Input/Area_Letters2"]
+margin_left = 386.0
+margin_right = 422.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "S"
+
+[node name="T" type="Button" parent="MarginContainer/Area_Input/Area_Letters2"]
+margin_left = 426.0
+margin_right = 462.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "T"
+
+[node name="U" type="Button" parent="MarginContainer/Area_Input/Area_Letters2"]
+margin_left = 466.0
+margin_right = 504.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "U"
+
+[node name="V" type="Button" parent="MarginContainer/Area_Input/Area_Letters2"]
+margin_left = 508.0
+margin_right = 546.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "V"
+
+[node name="W" type="Button" parent="MarginContainer/Area_Input/Area_Letters2"]
+margin_left = 550.0
+margin_right = 599.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "W"
+
+[node name="X" type="Button" parent="MarginContainer/Area_Input/Area_Letters2"]
+margin_left = 603.0
+margin_right = 640.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "X"
+
+[node name="Y" type="Button" parent="MarginContainer/Area_Input/Area_Letters2"]
+margin_left = 644.0
+margin_right = 681.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "Y"
+
+[node name="Z" type="Button" parent="MarginContainer/Area_Input/Area_Letters2"]
+margin_left = 685.0
+margin_right = 720.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "Z"
+[connection signal="pressed" from="MarginContainer/Area_Input/VBoxContainer/HBoxContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters1/A" to="." method="_on_A_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters1/B" to="." method="_on_B_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters1/C" to="." method="_on_C_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters1/D" to="." method="_on_D_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters1/E" to="." method="_on_E_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters1/F" to="." method="_on_F_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters1/G" to="." method="_on_G_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters1/H" to="." method="_on_H_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters1/I" to="." method="_on_I_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters1/J" to="." method="_on_J_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters1/K" to="." method="_on_K_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters1/L" to="." method="_on_L_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters1/M" to="." method="_on_M_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters1/N" to="." method="_on_N_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters1/O" to="." method="_on_O_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters2/P" to="." method="_on_P_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters2/Q" to="." method="_on_Q_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters2/R" to="." method="_on_R_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters2/S" to="." method="_on_S_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters2/T" to="." method="_on_T_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters2/U" to="." method="_on_U_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters2/V" to="." method="_on_V_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters2/W" to="." method="_on_W_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters2/X" to="." method="_on_X_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters2/Y" to="." method="_on_Y_pressed"]
+[connection signal="pressed" from="MarginContainer/Area_Input/Area_Letters2/Z" to="." method="_on_Z_pressed"]
